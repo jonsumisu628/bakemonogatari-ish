@@ -14,9 +14,17 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.0.1",
+    "gatsby-awesome-pagination": "^0.3.6",
+    "gatsby-plugin-styled-components": "^4.1.0",
+    "gatsby-source-contentful": "^5.1.1",
+    "gatsby-source-filesystem": "^3.1.0",
+    "gatsby-transformer-remark": "^3.1.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "prettier": "2.2.1"
