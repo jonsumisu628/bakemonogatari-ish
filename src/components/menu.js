@@ -8,7 +8,7 @@ export default function Menu() {
             <StyledLink to="/who" activeClassName="active">私<p>I</p></StyledLink>
             <StyledLink to="/study" activeClassName="active">勉強<p>study</p></StyledLink>
             <StyledLink to="/pastime" activeClassName="active">趣味<p>pastime</p></StyledLink>
-            <StyledLink to="/blog" activeClassName="active">ブログ<p>blog</p></StyledLink>
+            <StyledLink to="/blog/" activeClassName="active">ブログ<p>blog</p></StyledLink>
             <StyledLink to="/link" activeClassName="active">リンク<p>link</p></StyledLink>
         </Navi>
     );

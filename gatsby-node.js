@@ -1,52 +1,74 @@
 const path = require("path")
-const {paginate} = require("gatsby-awesome-pagination")
+const {createFilePath} = require("gatsby-source-filesystem")
 
-module.exports.onCreateNode = ({node, actions}) => {
-    const {createNodeField} = actions
-
-    if (node.internal.type === "MarkdownRemark") {
-        const slug = path.basename(node.fileAbsolutePath, ".md")
-
-        createNodeField({
-            node,
-            name: "slug",
-            value: slug,
-        })
-    }
-}
-
-module.exports.createPages = async ({graphql, actions}) => {
+exports.createPages = async ({graphql, actions, reporter}) => {
     const {createPage} = actions
-    const blogTemplate = path.resolve("./src/template/blog.js")
-    const res = await graphql(`
-    query {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
+    const result = await graphql(
+        `
+      {
+        allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              fields {
+                slug
+              }
             }
           }
         }
       }
+    `
+    )
+    if (result.errors) {
+        reporter.panicOnBuild(`Error while running GraphQL query.`)
+        return
     }
-  `)
-
-    res.data.allMarkdownRemark.edges.forEach(edge => {
+    // ...
+    // Create blog-list pages
+    const posts = result.data.allMarkdownRemark.edges;
+    const postsPerPage = 2;
+    const numPages = Math.ceil(posts.length / postsPerPage)
+    Array.from({length: numPages}).forEach((_, i) => {
         createPage({
-            component: blogTemplate,
-            path: `/blog/${edge.node.fields.slug}`,
+            path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+            component: path.resolve("./src/template/bloglist.js"),
             context: {
-                slug: edge.node.fields.slug,
+                limit: postsPerPage,
+                skip: i * postsPerPage,
+                numPages,
+                currentPage: i + 1,
             },
         })
     })
 
-    paginate({
-        createPage,
-        items: result.data.allMarkdownRemark.edges,
-        itemsPerPage: 3,
-        pathPrefix: "/blog",
-        component: blogTemplate,
-    });
+    // Create blog-page pages
+    posts.forEach((post, index) => {
+        //前後記事
+        const previous = index === posts.length - 1 ? null : posts[index + 1].node
+        const next = index === 0 ? null : posts[index - 1].node
+
+        createPage({
+            path: `/blog${post.node.fields.slug}`,
+            component: path.resolve("./src/template/blogpage.js"),
+            context: {
+                slug: post.node.fields.slug,
+                previous,
+                next,
+            },
+        })
+    })
+}
+
+exports.onCreateNode = ({node, actions, getNode}) => {
+    const {createNodeField} = actions
+    if (node.internal.type === `MarkdownRemark`) {
+        const value = createFilePath({node, getNode})
+        createNodeField({
+            name: `slug`,
+            node,
+            value,
+        })
+    }
 }
