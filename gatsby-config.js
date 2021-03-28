@@ -13,7 +13,15 @@ module.exports = {
     plugins: [
         `gatsby-plugin-material-ui`,
         `gatsby-plugin-styled-components`,
-        "gatsby-transformer-remark",
+        {
+            resolve: "gatsby-transformer-remark",
+            options: {
+                plugins: [
+                    'gatsby-remark-prismjs-title',
+                    `gatsby-remark-prismjs`,
+                ]
+            }
+        },
         {
             resolve: "gatsby-source-filesystem",
             options: {

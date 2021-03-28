@@ -28,10 +28,18 @@ const StyledLink = styled(Link)`
       background-color: black;
       transition: 1s;
   }
+  @media (min-width: 1919px) {
+      width:170px;
+      font-size:44px;
+      p {
+          font-size:26px;
+      }
+  }
 `;
 
 const Navi = styled.div`
   display: flex;
   justify-content: space-evenly;
+  text-align: center;
   font-size: 26px;
 `;

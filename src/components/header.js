@@ -11,8 +11,12 @@ export default function Header() {
 }
 
 const Body = styled.div`
-  font-size: 35px;
+  text-align: center;
+  font-size: 36px;
   p {
     margin: 40px 0px 10px 0px;
+  }
+  @media (min-width: 1919px) {
+      font-size:60px;
   }
 `;

@@ -67,10 +67,10 @@ const Body = styled.div`
     width: 900px;
     height: 380px;
     z-index:1;
+    opacity:0.5;
     position: absolute;
     top: 50;
     right: 50;
-
     animation-name:desk;
     animation-duration:4s;
     animation-iteration-count: 1;
@@ -91,7 +91,13 @@ const Body = styled.div`
         100% {
             filter: invert(95%) sepia(95%) saturate(19%) hue-rotate(343deg) brightness(103%) contrast(109%);
         }
+    }
   }
+  @media (min-width: 1919px) {
+    img {
+        width: 1530px;
+        height: 640px;
+    }
   }
 `;
 
@@ -108,11 +114,17 @@ const PageNumberLink = styled(Link)`
   &.active {
       text-decoration: underline;
   }
+  @media (min-width: 1919px) {
+    font-size:44px;
+  }
 `;
 
 const BlogPageLink = styled(Link)`
-  font-size: 35px;
+  font-size: 36px;
   color: white;
   text-decoration: none;
   z-index:2;
+  @media (min-width: 1919px) {
+    font-size:60px;
+  }
 `;

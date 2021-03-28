@@ -13,8 +13,12 @@ export default function Footer() {
 
 const Body = styled.div`
   margin-bottom: 40px;
+  text-align: center;
   font-size: 26px;
   font-family: "ＭＳ ゴシック";
+  @media (min-width: 1919px) {
+      font-size:44px;
+  }
 `;
 
 const StyledLink = styled(Link)`

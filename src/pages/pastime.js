@@ -21,6 +21,7 @@ export default function Pastime() {
 }
 
 const Body = styled.div`
+  text-align: center;
   img {
     width:160px;
     height:110px;
@@ -38,11 +39,17 @@ const Body = styled.div`
         }
     }
   }
+  @media (min-width: 1919px) {
+    img {
+      width:320px;
+      height:220px;
+    }
+  }
 `;
 
 const Text = styled.div`
   color: white;
-  font-size: 35px;
+  font-size: 36px;
   animation-name:pastime;
   animation-duration:5s;
   animation-iteration-count: 1;
@@ -59,4 +66,7 @@ const Text = styled.div`
     .first {
         margin-top:0px;
     }
+  @media (min-width: 1919px) {
+    font-size:60px;
+  }
 `;

@@ -23,6 +23,7 @@ export default function Who() {
 }
 
 const Body = styled.div`
+  text-align: center;
   img {
     position: absolute;
     top: 20;
@@ -43,11 +44,17 @@ const Body = styled.div`
         }
     }
   }
+  @media (min-width: 1919px) {
+      img {
+        width:740px;
+        height:580px;
+      }
+  }
 `;
 
 const Text = styled.div`
   color: white;
-  font-size: 35px;
+  font-size: 36px;
   animation-name:who;
   animation-duration:4s;
   animation-iteration-count: 1;
@@ -65,4 +72,7 @@ const Text = styled.div`
             opacity:1;
         }
     }
+  @media (min-width: 1919px) {
+      font-size:60px;
+  }
 `;

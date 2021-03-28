@@ -22,9 +22,12 @@
     "gatsby-cli": "^3.1.0",
     "gatsby-plugin-material-ui": "^2.1.10",
     "gatsby-plugin-styled-components": "^4.1.0",
+    "gatsby-remark-prismjs": "^4.1.0",
+    "gatsby-remark-prismjs-title": "^1.0.0",
     "gatsby-source-contentful": "^5.1.1",
     "gatsby-source-filesystem": "^3.1.0",
     "gatsby-transformer-remark": "^3.1.0",
+    "prismjs": "^1.23.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.2.1"

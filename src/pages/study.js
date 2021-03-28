@@ -23,6 +23,7 @@ export default function Study() {
 }
 
 const Body = styled.div`
+  text-align: center;
   img {
     width:200px;
     height:150px;
@@ -44,12 +45,18 @@ const Body = styled.div`
         }
     }
   }
+  @media (min-width: 1919px) {
+    img {
+      width:400px;
+      height:300px;
+    }
+  }
 `;
 
 const Text = styled.div`
   color: white;
   p {
-    font-size: 35px;
+    font-size: 36px;
   }
   animation-name:study;
   animation-duration:4s;
@@ -63,4 +70,9 @@ const Text = styled.div`
             opacity: 1;
         }
     }
+  @media (min-width: 1919px) {
+      p {
+          font-size:60px;
+      }
+  }
 `;

@@ -51,7 +51,29 @@ const Body = styled.div`
   img {
       width: 150px;
       height: 100px;
+      z-index:1;
       filter: invert(96%) sepia(15%) saturate(7484%) hue-rotate(188deg) brightness(128%) contrast(108%);
+
+      animation-name:snake;
+      animation-duration:2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      @keyframes snake {
+          0% {
+            opacity:0;
+            transform:translateX(-200px);
+          }
+          100% {
+            opacity:1;
+            transform:translateX(0px);
+          }
+      }
+  }
+  @media (min-width: 1919px) {
+    img {
+      width: 210px;
+      height: 140px;
+    }
   }
 `;
 
@@ -59,10 +81,11 @@ const Text = styled.div`
   display: flex;
   flex-direction: column;
   align-items:center;
+  z-index:2;
   a {
     text-decoration: none;
     color: white;
-    font-size: 35px;
+    font-size: 36px;
   }
   .icon {
     padding: 1px 8px 1px 8px;
@@ -70,10 +93,17 @@ const Text = styled.div`
     color: red;
     font-weight:bold;
     font-family: "游ゴシック";
-    font-size: 35px;
+    font-size: 36px;
     border: solid 1px white;
     border-radius: 50%;
   }
+  @media (min-width: 1919px) {
+      a {
+          font-size:60px;
+      }
+      .icon {
+          font-size:60px;
+      }
 `;
 
 const GithubLink = styled.div`

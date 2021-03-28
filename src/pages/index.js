@@ -12,7 +12,6 @@ function Meigen() {
         "つ ば さ キ ャ ッ ト ",
     ];
     let ran = Math.floor(Math.random() * array.length);
-    console.log(array[ran]);
     return array[ran];
 }
 
@@ -41,8 +40,12 @@ export default function Home() {
 }
 
 const Body = styled.div`
+  text-align: center;
   color: white;
-  font-size: 50px;
+  font-size: 36px;
+  @media (min-width: 1919px) {
+      font-size:60px;
+  }
 `;
 
 const Title = styled.div`
@@ -51,8 +54,13 @@ const Title = styled.div`
   ruby-position: under;
 
   rt {
-    font-size: 20px;
+    font-size: 16px;
     font-style: italic;
+  }
+  @media (min-width: 1919px) {
+      rt {
+          font-size:26px;
+      }
   }
 `;
 
