@@ -12,10 +12,10 @@ export default function Study() {
                 <img src={Snail} alt="snail" />
                 <Text>
                     <p>フロントエンド</p>
-                    <p>JavaScript / TypeScript / HTML / CSS <br></br> React / Gatuby / Vue / Svelte</p>
+                    <p>JavaScript / React / Gatuby</p>
 
                     <p>バックエンド</p>
-                    <p>Linux / Docker / Vagrant</p>
+                    <p>Linux / Docker</p>
                 </Text>
             </Body>
         </Layout>

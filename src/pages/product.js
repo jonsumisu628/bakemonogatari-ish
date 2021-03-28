@@ -5,15 +5,15 @@ import Layout from "../components/layout/layout";
 
 import Cat from "../components/img/cat.png";
 
-export default function Pastime() {
+export default function Product() {
     return (
         <Layout>
             <Body>
                 <img src={Cat} alt="cat" />
                 <Text>
-                    <p className="first">アニメやゲームが好きです。</p>
-                    <p>バスケやスノースポーツもやります。</p>
-                    <p>専門学校に入学してからは筋トレも始めました。</p>
+                    <p className="first">hoge</p>
+                    <p>huga</p>
+                    <p>hugo</p>
                 </Text>
             </Body>
         </Layout>

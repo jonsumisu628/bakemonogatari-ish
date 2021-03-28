@@ -1,6 +1,6 @@
 ---
-title: post3
+title: Dummy3
 date: "2021-03-25"
 ---
 
-# ぽすと3
+# Dummy3

@@ -23,7 +23,7 @@ export default function Who() {
             <Body>
                 <Text>
                     <p>
-                        <a href="https://github.com/jonsumisu628" target="_blank" rel="noreferrer noopener">
+                        <a href="https://github.co.jp/" target="_blank" rel="noreferrer noopener">
                             <GithubLink>
                                 {oneText("Github")}
                                 <span><GoMarkGithub color="white" /></span>
@@ -31,7 +31,7 @@ export default function Who() {
                         </a>
                     </p>
                     <p>
-                        <a href="https://qiita.com/john_smith628" target="_blank" rel="noreferrer noopener">
+                        <a href="https://qiita.com/" target="_blank" rel="noreferrer noopener">
                             <QiitaLink>
                                 {oneText("Qiita")}<span className="icon">Q</span>
                             </QiitaLink>

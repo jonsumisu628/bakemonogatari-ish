@@ -1,6 +1,6 @@
 ---
-title: "post1"
+title: "Dummy1"
 date: "2021-03-23"
 ---
 
-# なんでもは知らない。
+# Dummy1

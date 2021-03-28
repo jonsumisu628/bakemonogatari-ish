@@ -12,10 +12,10 @@ export default function Who() {
                 <img src={Crab} alt="crab" />
                 <Text>
                     <p>NicName:John.Smith</p>
-                    <p>BirthDay:1999/6/28</p>
-                    <p>Location：Tokyo</p>
-                    <p>東京の専門学校に通っています。</p>
-                    <p>現在就職活動中...</p>
+                    <p>BirthDay:2021/3/29</p>
+                    <p>Location：Japan</p>
+                    <p>某学校に通っています</p>
+                    <p>某企業で働いています</p>
                 </Text>
             </Body>
         </Layout>
