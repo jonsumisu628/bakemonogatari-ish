@@ -2,37 +2,69 @@ import React from "react";
 import styled from "styled-components";
 import {GoMarkGithub} from "@react-icons/all-files/go/GoMarkGithub";
 
-import Layout from "../components/styles/layout";
+import Layout from "../components/layout/layout";
+
+import Snake from "../components/img/snake.png";
+
+const oneText = (linktext) => {
+    let text = linktext;
+    let result = text.split("");
+    let newText = "";
+
+    for (let i = 0; i < result.length; i++) {
+        newText += "<span>" + result[i] + "</span>";
+    }
+    return <div dangerouslySetInnerHTML={{__html: newText}}></div>
+}
 
 export default function Who() {
     return (
         <Layout>
-            <Text>
-                <p>
-                    <a href="https://github.com/jonsumisu628" target="_blank" rel="noreferrer noopener">
-                        Github
-                        <GoMarkGithub color="white" />
-                    </a>
-                </p>
-                <p>
-                    <a href="https://qiita.com/john_smith628" target="_blank" rel="noreferrer noopener">
-                        Qiita<span>Q</span>
-                    </a>
-                </p>
-            </Text>
+            <Body>
+                <Text>
+                    <p>
+                        <a href="https://github.com/jonsumisu628" target="_blank" rel="noreferrer noopener">
+                            <GithubLink>
+                                {oneText("Github")}
+                                <span><GoMarkGithub color="white" /></span>
+                            </GithubLink>
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://qiita.com/john_smith628" target="_blank" rel="noreferrer noopener">
+                            <QiitaLink>
+                                {oneText("Qiita")}<span className="icon">Q</span>
+                            </QiitaLink>
+                        </a>
+                    </p>
+                </Text>
+                <img src={Snake} alt="snake" />
+            </Body>
         </Layout>
     )
 }
 
+const Body = styled.div`
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  img {
+      width: 150px;
+      height: 100px;
+      filter: invert(96%) sepia(15%) saturate(7484%) hue-rotate(188deg) brightness(128%) contrast(108%);
+  }
+`;
+
 const Text = styled.div`
   display: flex;
   flex-direction: column;
+  align-items:center;
   a {
     text-decoration: none;
     color: white;
     font-size: 35px;
   }
-  span {
+  .icon {
     padding: 1px 8px 1px 8px;
     background-color: wheat;
     color: red;
@@ -41,5 +73,88 @@ const Text = styled.div`
     font-size: 35px;
     border: solid 1px white;
     border-radius: 50%;
+  }
+`;
+
+const GithubLink = styled.div`
+  display:flex;
+  span {
+    display: inline-block;
+    animation-name: wave-text;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    &:nth-of-type(1) {
+      animation-delay: 0.0s;
+    }
+    &:nth-of-type(2) {
+       animation-delay: 0.1s;
+    }
+    &:nth-of-type(3) {
+       animation-delay: 0.2s;
+    }
+    &:nth-of-type(4) {
+       animation-delay: 0.3s;
+    }
+    &:nth-of-type(5) {
+       animation-delay: 0.4s;
+    }
+    &:nth-of-type(6) {
+       animation-delay: 0.5s;
+    }
+    &:nth-of-type(7) {
+       animation-delay: 0.6s;
+    }
+  }
+  @keyframes wave-text{
+      0%{
+          transform: translateY(0em);
+      }
+      60%{
+          transform: translateY(-0.8em);
+      }
+      100%{
+          transform: translateY(0em);
+      }
+  }
+`;
+
+const QiitaLink = styled.div`
+  display:flex;
+  span {
+    display: inline-block;
+    animation-name: wave-text;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    &:nth-of-type(1) {
+      animation-delay: 0.0s;
+    }
+    &:nth-of-type(2) {
+       animation-delay: 0.1s;
+    }
+    &:nth-of-type(3) {
+       animation-delay: 0.2s;
+    }
+    &:nth-of-type(4) {
+       animation-delay: 0.3s;
+    }
+    &:nth-of-type(5) {
+       animation-delay: 0.4s;
+    }
+    &:nth-of-type(6) {
+       animation-delay: 0.5s;
+    }
+  }
+  @keyframes wave-text{
+      0%{
+          transform: translateY(0em);
+      }
+      60%{
+          transform: translateY(-0.8em);
+      }
+      100%{
+          transform: translateY(0em);
+      }
   }
 `;

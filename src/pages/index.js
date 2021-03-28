@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components";
 
-import Layout from "../components/styles/layout";
+import Layout from "../components/layout/layout";
 
 function Meigen() {
     let array = [
@@ -19,8 +19,8 @@ function Meigen() {
 export default function Home() {
     return (
         <Layout>
-            <Text>
-                <Next>
+            <Body>
+                <Title>
                     <ruby>
                         次     <rt>zi.    </rt>
                         回<rt> kai.</rt>
@@ -34,18 +34,18 @@ export default function Home() {
                     壹<rt>      ichi.</rt>
                         </ruby>
                     </Subtitle>
-                </Next>
-            </Text>
+                </Title>
+            </Body>
         </Layout>
     );
 }
 
-const Text = styled.div`
+const Body = styled.div`
   color: white;
   font-size: 50px;
 `;
 
-const Next = styled.div`
+const Title = styled.div`
   margin-bottom: 50px;
   white-space: pre;
   ruby-position: under;

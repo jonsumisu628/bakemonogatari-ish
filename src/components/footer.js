@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function Footer() {
     return (
         <Body>
-            <StyledLink to="/">J O H N S M I T H</StyledLink>
+            <StyledLink to="/">J  O  H  N  S  M  I  T  H</StyledLink>
         </Body>
 
     );
@@ -20,4 +20,5 @@ const Body = styled.div`
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: white;
+  white-space: pre;
 `;
