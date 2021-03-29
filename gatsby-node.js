@@ -25,7 +25,7 @@ exports.createPages = async ({graphql, actions, reporter}) => {
         reporter.panicOnBuild(`Error while running GraphQL query.`)
         return
     }
-    // ...
+
     // Create blog-list pages
     const posts = result.data.allMarkdownRemark.edges;
     const postsPerPage = 2;
